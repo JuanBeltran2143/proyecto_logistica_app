@@ -12,7 +12,10 @@ Este repositorio contiene el desarrollo del proyecto de análisis y diseño de s
 ## Metodología
 El proyecto se desarrolla bajo metodología **Scrum**, complementada con herramientas de **Design Thinking** en las fases de análisis y diseño.
 
+## Documento de identificacion del proyecto
+[_Identificaciòn del proyecto tecnologico a trabajar_]( Actividad_1_Identificar_el_proyecto_tecnológico_a_trabajar.pdf )
+
 ## Autor
 **Juan Beltrán**  
 Estudiante de Ingeniería de Software  de 5to semestre
-Asignatura analisis y diseño de sistemas
+**Asignatura analisis y diseño de sistemas**
