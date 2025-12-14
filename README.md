@@ -4,7 +4,7 @@ Este repositorio contiene el desarrollo del proyecto de análisis y diseño de s
 
 ## Estructura de ramas
 - `main`: versión estable del proyecto.
-- `dev`: rama de desarrollo.
+- `dev`: rama de desarrollo, Aqui encuentras el archivo del desarrollo de la **Actividad 3 - Sitio Web** y codigos de la pagina desarrollada **(HTML, CSS y JS)**
 - `analisis`: documentos de requerimientos, casos de uso y diagramas AS-IS/TO-BE.
 - `diseno`: artefactos de diseño (UML, arquitectura, base de datos, UI/UX) Aqui encuentras el archivo del desarrollo de la **Actividad 2 - Prototipo del ProyectoActividad 2 - Prototipo del Proyecto**.
 - `documentacion`: informes y entregables académicos.
