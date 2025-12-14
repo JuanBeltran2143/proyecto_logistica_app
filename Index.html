@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="login-section" class="d-flex align-items-center justify-content-center">
+        <div class="login-bg-curve-top"></div>
+        <div class="container text-center login-container">
+            <div class="mb-4">
+                <img src="logo_mockup.png" alt="SmileShop Logo" class="img-fluid mx-auto d-block mb-3" style="max-width: 150px;">
+            </div>
+            <div class="card p-4 shadow-lg border-0 rounded-4">
+                <h5 class="mb-3" id="loginTitle">Bienvenido</h5>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <input type="email" id="emailInput" class="form-control" placeholder="email@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="passwordInput" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" id="loginSubmitBtn" class="btn btn-dark w-100 py-2 rounded-pill">Ingresar</button>
+                </form>
+                <div class="mt-3">
+                    <small class="text-muted clickable-text" id="toggleLoginMode">¿No tienes cuenta? Regístrate aquí</small>
+                </div>
+            </div>
+        </div>
+        <div class="login-bg-curve-bottom"></div>
+    </section>
+
+    <section id="app-section" class="d-none">
+        
+        <header class="app-header bg-white shadow-sm px-3 py-2 d-flex align-items-center fixed-top">
+            <div class="flex-grow-1 me-3 position-relative">
+                <input type="text" class="form-control rounded-pill bg-secondary-subtle border-0 ps-4 text-center" placeholder="Buscar productos">
+            </div>
+            <button class="btn border-0 position-relative" data-bs-toggle="modal" data-bs-target="#notificationModal">
+                <i class="bi bi-bell fs-4 text-dark"></i>
+            </button>
+        </header>
+
+        <main class="container mt-4 pt-5 mb-5 pb-5" id="main-content">
+            
+            <div id="view-home" class="view-section">
+                <div class="mt-4"></div>
+
+                <h6 class="fw-bold text-center mb-3">Ofertas del día</h6>
+                
+                <div class="card gradient-border-container mb-4 p-2">
+                    <div class="row g-0"> 
+                        <div class="col-6 text-center border-end p-2 mb-3 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge bg-light text-dark border rounded-pill mb-2 small">Macbook Pro 14 Inch</span>
+                                <div class="ratio ratio-4x3 mb-2 rounded overflow-hidden bg-light shadow-sm">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="video_macbook.mp4" type="video/mp4">
+                                        <div class="d-flex align-items-center justify-content-center h-100"><i class="bi bi-laptop fs-1"></i></div>
+                                    </video>
+                                </div>
+                                <p class="fw-bold small mb-2">$3.249.000 COP c/u <span class="text-danger">-32%</span></p>
+                                <div class="text-center product-specs mb-2">
+                                    <span class="d-block">• Chip M1 PRO</span>
+                                    <span class="d-block">• 16 GB RAM</span>
+                                    <span class="d-block">• SSD 512 GB</span>
+                                    <span class="d-block">• Resolución 4K</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary rounded-pill w-100 btn-add-cart" 
+                                    data-name="Macbook Pro 14 Inch" 
+                                    data-price="$3.249.000" 
+                                    data-img="img_Mackbook.png"> Agregar <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="col-6 text-center p-2 mb-3 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge bg-light text-dark border rounded-pill mb-2 small">Llanta Michelin road 6</span>
+                                <div class="ratio ratio-4x3 mb-2 rounded overflow-hidden bg-light shadow-sm">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="video_llanta.mp4" type="video/mp4">
+                                        <div class="d-flex align-items-center justify-content-center h-100"><i class="bi bi-vinyl fs-1"></i></div>
+                                    </video>
+                                </div>
+                                <p class="fw-bold small mb-2">$879.990 COP c/u <span class="text-danger">-17%</span></p>
+                                <div class="text-center product-specs mb-2">
+                                    <span class="d-block">• Medida 180/55z R17</span>
+                                    <span class="d-block">• Agarre pro-evolution</span>
+                                    <span class="d-block">• Alto rendimiento</span>
+                                    <span class="d-block">• Garantía 1 año</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary rounded-pill w-100 btn-add-cart" 
+                                    data-name="Llanta Michelin Road 6" 
+                                    data-price="$879.990" 
+                                    data-img="img_michelin.jpg"> Agregar <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <h6 class="fw-bold text-center mb-2">Tecnología</h6>
+                <div class="category-pill mb-4">
+                    <i class="bi bi-phone fs-2 text-dark"></i>
+                    <i class="bi bi-pc-display fs-2 text-dark"></i>
+                    <i class="bi bi-printer fs-2 text-dark"></i>
+                    <i class="bi bi-headphones fs-2 text-dark"></i>
+                    <i class="bi bi-controller fs-2 text-dark"></i>
+                </div>
+                <h6 class="fw-bold text-center mb-2">Vehículos</h6>
+                <div class="category-pill mb-4">
+                    <i class="bi bi-life-preserver fs-2 text-dark"></i>
+                    <i class="bi bi-car-front-fill fs-2 text-dark"></i>
+                    <i class="bi bi-fuel-pump-fill fs-2 text-dark"></i>
+                    <i class="bi bi-briefcase-medical-fill fs-2 text-dark"></i>
+                    <i class="bi bi-spray-can fs-2 text-dark"></i>
+                </div>
+                <h6 class="fw-bold text-center mb-2">Hogar</h6>
+                <div class="category-pill mb-5">
+                    <i class="bi bi-brush fs-2 text-dark"></i>
+                    <i class="bi bi-door-closed fs-2 text-dark"></i>
+                    <i class="bi bi-plug fs-2 text-dark"></i>
+                    <i class="bi bi-lamp fs-2 text-dark"></i>
+                    <i class="bi bi-basket fs-2 text-dark"></i>
+                </div>
+            </div>
+
+            <div id="view-cart" class="view-section d-none">
+                <div class="mt-4"></div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="pill-header border rounded-pill px-3 py-1 small fw-bold">Carrito de compras</div>
+                    <div class="d-flex align-items-center gap-2 text-dark">
+                        <i class="bi bi-trash3 fs-5"></i>
+                        <i class="bi bi-truck fs-5"></i>
+                        <i class="bi bi-geo-alt-fill fs-5"></i>
+                        <span class="small fw-bold">Bogotá D.C.</span>
+                    </div>
+                </div>
+                
+                <div class="card gradient-border-container p-3 mb-3" id="cart-container">
+                    <div class="d-flex align-items-start mb-3 align-items-center cart-item">
+                        <input class="form-check-input me-2 item-check" type="checkbox">
+                        <div class="me-3 text-center" style="width: 80px;">
+                            <img src="img_iphone.jpg" class="img-fluid rounded item-img" alt="iPhone 15">
+                        </div>
+                        <div class="flex-grow-1">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1 item-name">iPhone 15 pro max</span>
+                            <p class="fw-bold mb-0 item-price">$4.749.990</p>
+                            <small class="text-danger fw-bold">-23% descuento</small><br>
+                            <small class="text-dark">Envío Gratis</small>
+                        </div>
+                        <div class="d-flex align-items-center border rounded-pill px-2 py-1 ms-2" style="min-width: 85px; justify-content: space-between;">
+                            <button class="btn btn-sm p-0 border-0 btn-decrease fw-bold" style="width: 20px;">-</button>
+                            <span class="mx-1 small item-quantity">1</span>
+                            <button class="btn btn-sm p-0 border-0 btn-increase fw-bold" style="width: 20px;">+</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start align-items-center cart-item">
+                        <input class="form-check-input me-2 item-check" type="checkbox">
+                        <div class="me-3 text-center" style="width: 80px;">
+                             <img src="img_coca.jpg" class="img-fluid rounded item-img" alt="CocaCola Pack">
+                        </div>
+                        <div class="flex-grow-1">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1 item-name">6 pack CocaCola</span>
+                            <p class="fw-bold mb-0 item-price">$11.490</p>
+                            <small class="text-danger fw-bold">-5% descuento</small><br>
+                            <small class="text-dark">Envío: $2.300 COP</small>
+                        </div>
+                        <div class="d-flex align-items-center border rounded-pill px-2 py-1 ms-2" style="min-width: 85px; justify-content: space-between;">
+                            <button class="btn btn-sm p-0 border-0 btn-decrease fw-bold" style="width: 20px;">-</button>
+                            <span class="mx-1 small item-quantity">1</span>
+                            <button class="btn btn-sm p-0 border-0 btn-increase fw-bold" style="width: 20px;">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3 mb-4 clickable-text" onclick="navigate('home')">
+                    <small class="fw-bold">Comprar más</small>
+                </div>
+
+                <div class="card gradient-border-container p-3 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-cash-coin fs-4 me-2"></i>
+                        <small class="fw-bold">Medios de Pago Autorizados</small>
+                    </div>
+                    <div class="d-flex justify-content-around flex-wrap gap-3">
+                        <i class="bi bi-credit-card-2-front fs-2 text-primary"></i> 
+                        <i class="bi bi-credit-card fs-2 text-danger"></i>
+                        <span class="fw-bold text-danger pt-1">Rappi</span>
+                        <span class="fw-bold text-secondary pt-1">Nequi</span>
+                        <i class="bi bi-cash fs-2 text-success"></i>
+                        <i class="bi bi-credit-card-2-back-fill fs-2 text-primary"></i>
+                        <i class="bi bi-apple fs-2 text-dark"></i>
+                    </div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-check-circle fs-5 me-2"></i>
+                        <small class="fw-bold">Tus medios de pago registrados</small>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-credit-card-fill fs-4 text-danger me-2"></i>
+                        <small>Tarjeta 45658******8765</small>
+                    </div>
+                </div>
+                
+                <div class="card rounded-pill border shadow-sm p-2 mb-2">
+                    <div class="d-flex justify-content-between align-items-center px-2">
+                        <small id="cart-selected-info">0 artículos seleccionados por pagar</small>
+                        <button id="pay-btn" class="btn btn-warning rounded-pill text-white fw-bold px-4" style="background: linear-gradient(to right, #ff9966, #6610f2);">Pagar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-envios" class="view-section d-none">
+                <div class="mt-4"></div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="pill-header border rounded-pill px-3 py-1 small fw-bold">Listado de envíos</div>
+                    <div class="d-flex align-items-center gap-2 text-dark">
+                        <i class="bi bi-trash3 fs-5"></i>
+                        <i class="bi bi-cart fs-5"></i>
+                        <i class="bi bi-geo-alt-fill fs-5"></i>
+                        <span class="small fw-bold">Bogotá D.C.</span>
+                    </div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-3" id="shipping-list">
+                    <div class="d-flex align-items-start mb-3 align-items-center">
+                        <input class="form-check-input me-2 rounded-circle" type="radio" name="envioGroup">
+                        <div class="me-3 text-center" style="width: 70px;">
+                            <img src="img_nevera.jpg" class="img-fluid rounded" alt="Nevera">
+                        </div>
+                        <div class="flex-grow-1 ps-2">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1">Nevera Haceb No Frost</span>
+                            <div class="small fw-bold">Valor pagado: $2.599.590</div>
+                            <small class="text-danger fw-bold">-30% descuento aplicado</small>
+                            <div class="small fw-bold mt-1">Entrega estimada: 21 de Noviembre</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start align-items-center">
+                        <input class="form-check-input me-2 rounded-circle" type="radio" name="envioGroup">
+                        <div class="me-3 text-center" style="width: 70px;">
+                             <img src="img_colchon.jpg" class="img-fluid rounded" alt="Colchon">
+                        </div>
+                        <div class="flex-grow-1 ps-2">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1">Colchón Pullman Semi-Doble</span>
+                            <div class="small fw-bold">Valor pagado: $1.699.990</div>
+                            <small class="text-danger fw-bold">-10% descuento</small>
+                            <div class="small fw-bold mt-1">Entrega estimada: 18 de Noviembre</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-2 mb-3 px-3">
+                    <small class="fw-bold clickable-text" onclick="navigate('home')">Comprar más</small>
+                    <small class="fw-bold clickable-text" onclick="navigate('history')">Historial de compras</small>
+                </div>
+
+                <div class="card gradient-border-container p-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-search fs-5 me-2"></i>
+                        <small class="fw-bold">Rastrea tu(s) pedido(s) en tiempo real</small>
+                    </div>
+                    <div class="bg-light rounded overflow-hidden position-relative mb-2" style="height: 200px;">
+                         <div style="width:100%; height:100%; background: url('img_mapa.jpg') no-repeat center center; background-size: cover;"></div>
+                         <div class="position-absolute top-50 start-50 translate-middle">
+                             <div class="bg-primary rounded-circle p-3 opacity-25 shadow" style="width: 120px; height: 120px;"></div>
+                         </div>
+                         <i class="bi bi-geo-alt-fill text-primary position-absolute top-50 start-50 translate-middle fs-1 filter-drop-shadow"></i>
+                    </div>
+                    <small class="text-center d-block">O pedidos seleccionados para ubicar en el mapa</small>
+                </div>
+            </div>
+
+            <div id="view-history" class="view-section d-none">
+                 <div class="mt-4"></div>
+                 <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="pill-header border rounded-pill px-3 py-1 small fw-bold">Historial de compras</div>
+                    <div class="d-flex align-items-center gap-2 text-dark">
+                        <i class="bi bi-trash3 fs-5"></i>
+                        <i class="bi bi-truck fs-5"></i>
+                        <i class="bi bi-geo-alt-fill fs-5"></i>
+                        <span class="small fw-bold">Bogotá D.C.</span>
+                    </div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <input class="form-check-input me-1" type="checkbox"> <small>Seleccionar Todo</small>
+                        </div>
+                        <button class="btn btn-secondary btn-sm rounded-pill py-0 disabled">Filtrar por referencia</button>
+                    </div>
+                    <div class="d-flex align-items-start mb-3 align-items-center">
+                        <input class="form-check-input me-2" type="checkbox">
+                        <div class="me-3 text-center" style="width: 70px;">
+                            <img src="img_cerveza.jpg" class="img-fluid rounded" alt="Cerveza Pack">
+                        </div>
+                        <div class="flex-grow-1">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1">Cerveza Aguila x24</span>
+                            <div class="small fw-bold">Valor cancelado: $52.490</div>
+                            <small class="text-danger fw-bold">-5% descuento aplicado</small>
+                            <div class="small">Pedido No. 213459</div>
+                            <div class="small fw-bold">Entregado 12 Noviembre 17:53 pm</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-3 p-2 border border-primary border-2 rounded align-items-center">
+                        <input class="form-check-input me-2" type="checkbox" checked>
+                        <div class="me-3 text-center" style="width: 70px;">
+                            <img src="img_plancha.jpg" class="img-fluid rounded" alt="Plancha">
+                        </div>
+                        <div class="flex-grow-1">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1">Plancha Home Elements</span>
+                            <div class="small fw-bold">Valor Cancelado: $129.990</div>
+                            <small class="text-danger fw-bold">-12% descuento aplicado</small>
+                            <div class="small">Pedido No. 213412</div>
+                            <div class="small fw-bold">Entregado 22 de Octubre 12:34 pm</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start align-items-center">
+                        <input class="form-check-input me-2" type="checkbox">
+                        <div class="me-3 text-center" style="width: 70px;">
+                            <img src="img_tv.jpg" class="img-fluid rounded" alt="Smart TV">
+                        </div>
+                        <div class="flex-grow-1">
+                            <span class="badge bg-light text-dark border rounded-pill mb-1">Smart TV LG UHD 79 inch</span>
+                            <div class="small fw-bold">Valor Cancelado: $3.129.990</div>
+                            <small class="text-danger fw-bold">-39% descuento aplicado</small>
+                            <div class="small">Pedido No. 213311</div>
+                            <div class="small fw-bold">Entregado 12 de Julio 08:18 am</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 clickable-text"><small class="fst-italic text-muted">Mostrar más</small></div>
+                </div>
+                <div class="card gradient-border-container p-3 text-center">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-incognito fs-3 me-2"></i>
+                        <span class="fw-bold">¿No encuentras tu pedido?</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <i class="bi bi-headset fs-1"></i>
+                            <div class="small mt-1 fw-bold">01 8000 42169 ext 12</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-envelope fs-1"></i>
+                            <div class="small mt-1 fw-bold">smileshop@onlinestore.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-profile" class="view-section d-none">
+                 <div class="mt-4"></div>
+                 <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="pill-header border rounded-pill px-3 py-1 small fw-bold">Cuenta</div>
+                    <div class="d-flex align-items-center gap-2 text-dark">
+                        <i class="bi bi-cart fs-5"></i>
+                        <i class="bi bi-truck fs-5"></i>
+                        <i class="bi bi-geo-alt-fill fs-5"></i>
+                        <span class="small fw-bold">Bogotá D.C.</span>
+                    </div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="bi bi-person-circle" style="font-size: 4rem;"></i>
+                        </div>
+                        <div>
+                            <small class="d-block fw-bold">Bienvenido Sr(a)</small>
+                            <h5 class="fw-bold mb-1">Juan David Beltrán</h5>
+                            <small class="d-block text-muted" style="font-size: 0.7rem;">Numero de indentificacion: 123*****19</small>
+                            <small class="d-block text-muted" style="font-size: 0.7rem;">Numero de contacto: 310*****95</small>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 clickable-text"><small class="text-muted">Ajustes de la cuenta</small></div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-check-circle fs-4 me-2"></i>
+                        <span class="fw-bold small">Medios de pago registrados</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                             <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-credit-card-fill text-danger fs-5 me-2"></i>
+                                <small>Tarjeta 45658******8765</small>
+                             </div>
+                             <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-cash fs-5 text-success me-2"></i>
+                                <small>Efectivo</small>
+                             </div>
+                             <div class="d-flex align-items-center">
+                                <i class="bi bi-credit-card-2-front text-primary fs-5 me-2"></i>
+                                <small>Tarjeta 69241******3241</small>
+                             </div>
+                        </div>
+                        <div class="border rounded-4 p-2 shadow-sm d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; cursor: pointer;">
+                            <small style="font-size: 0.65rem; text-align: center; line-height: 1.2;">Agregar medio de pago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card gradient-border-container p-3 mb-4">
+                     <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt-fill fs-5 me-2"></i>
+                        <span class="fw-bold small">Direccion(es) de entrega</span>
+                    </div>
+                    <div id="address-list">
+                        <div class="d-flex align-items-center justify-content-between mb-2 address-item">
+                            <div>
+                                <input class="form-check-input me-2" type="checkbox" checked>
+                                <small>Carrera 43B # 4F - 72 (En uso)</small>
+                            </div>
+                            <button class="btn btn-sm text-danger delete-addr-btn d-none"><i class="bi bi-trash"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-2 address-item">
+                            <div>
+                                <input class="form-check-input me-2" type="checkbox">
+                                <small>Calle 81# 11 - 08 piso 11</small>
+                            </div>
+                            <button class="btn btn-sm text-danger delete-addr-btn d-none"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <small class="text-muted fst-italic clickable-text" id="manage-addresses-btn" style="font-size: 0.7rem;">Agregar / Quitar dirección de entrega</small>
+                    </div>
+                    <div id="new-address-form" class="d-none mt-3 border-top pt-2">
+                        <div class="input-group input-group-sm">
+                            <input type="text" id="new-address-input" class="form-control" placeholder="Escribe nueva dirección...">
+                            <button class="btn btn-primary" id="save-address-btn">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <button id="logoutBtn" class="btn btn-outline-danger rounded-pill w-100 fw-bold py-2">Cerrar Sesión</button>
+                </div>
+            </div>
+
+        </main>
+
+        <nav class="navbar fixed-bottom custom-navbar-blue shadow-lg">
+            <div class="container-fluid d-flex justify-content-around align-items-end pb-2">
+                <button class="btn nav-btn" onclick="navigate('cart')">
+                    <i class="bi bi-cart fs-4"></i>
+                </button>
+                <button class="btn nav-btn" onclick="navigate('envios')">
+                    <i class="bi bi-truck fs-4"></i>
+                </button>
+                <button class="btn nav-btn active home-btn" onclick="navigate('home')">
+                    <i class="bi bi-house-door-fill fs-3"></i>
+                </button>
+                <button class="btn nav-btn" onclick="navigate('history')">
+                    <i class="bi bi-clock-history fs-4"></i>
+                </button>
+                <button class="btn nav-btn" onclick="navigate('profile')">
+                    <i class="bi bi-person fs-4"></i>
+                </button>
+            </div>
+        </nav>
+
+    </section>
+
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold">Notificaciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="mb-3"><i class="bi bi-bell-slash fs-1 text-muted"></i></div>
+                    <p class="fs-5 text-secondary">Disculpa, en este momento<br>no tienes notificaciones<br>disponibles.</p>
+                </div>
+                <div class="modal-footer border-top-0 justify-content-center">
+                    <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
